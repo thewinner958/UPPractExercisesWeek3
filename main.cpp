@@ -170,11 +170,21 @@ int main() {
         case 6:
         case 9:
         case 11:
-            cout << thirty;
+            cout << thirty << endl;
             break;
         default:
             cout << "Error\n";
             break;
     }
+
+    // Exercise 7
+    int num;
+    cin >> num;
+    int dgt1 = num / 1000;
+    int dgt2 = (num / 100) % 10;
+    int dgt3 = (num / 10) % 10;
+    int dgt4 = num % 10;
+    bool rslt = dgt1 % 2 != 0 && (dgt1 > dgt2 && dgt1 > dgt3 && dgt1 > dgt4);
+    cout << boolalpha << rslt << endl;
     return 0;
 }
