@@ -1,4 +1,5 @@
 #include <iostream>
+#include <cmath>
 
 using namespace std;
 
@@ -80,11 +81,11 @@ int main() {
     // Exercise 3
     int a, b;
     cin >> a >> b;
-    int x = b / -a;
-    if (a * x + b == 0) {
-        cout << x << endl;
+    int lx = b / -a;
+    if (a * lx + b == 0) {
+        cout << lx << endl;
     }
-    else if (x == 0)
+    else if (lx == 0)
     {
         cout << "INF\n";
     }
@@ -186,5 +187,15 @@ int main() {
     int dgt4 = num % 10;
     bool rslt = dgt1 % 2 != 0 && (dgt1 > dgt2 && dgt1 > dgt3 && dgt1 > dgt4);
     cout << boolalpha << rslt << endl;
+
+    // Exercise 8
+    int inTomatoes, inPeppers, inCarrots, inOlives, inPotatoes, inFlavoring;
+    cin >> inTomatoes >> inPeppers >> inCarrots >> inOlives >> inPotatoes >> inFlavoring;
+    bool needsHelp = inTomatoes > 1;
+    bool studentSalad = inTomatoes >= 1 && inPeppers >= 2 && inCarrots >= 4 && inOlives >= 3 && inPotatoes == 3 && inFlavoring >= 150;
+    bool studentSoup = inTomatoes >= 2 && inPeppers >= 3 && inCarrots >= 5 && inOlives >= 6 && inPotatoes == 10 && inFlavoring >= 200;
+    bool studentCasserole = inTomatoes >= 5 && inPeppers >= 6 && inCarrots >= 12 && inOlives >= 7 && inPotatoes == 12 && inFlavoring >= 300;
+    studentCasserole || studentSalad || studentSoup ? cout << "He has the necessary ingredients to make one or more dishes\n" : cout << "He probably needs to go to BILLA\n";
+    needsHelp == 1 ? cout << "He also needs help" : cout << endl;
     return 0;
 }
