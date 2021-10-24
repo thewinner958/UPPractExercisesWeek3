@@ -3,7 +3,7 @@
 using namespace std;
 
 int main() {
-    /*// Exercise 0
+    // Exercise 0
     double x, y;
     char oper;
     double result = 0;
@@ -131,38 +131,49 @@ int main() {
     else
     {
         cout << character << " is a special character\n";
-    }*/
+    }
 
     // Exercise 4
     int mth, yr;
     cin >> mth >> yr;
+    int thirtyFirst = 31;
+    int thirty = 30;
+    int febLeap = 29;
     switch (mth)
     {
         case 1:
-            cout << 31;
-        case 2:
-            cout << "The season is winter\n";
-            break;
         case 3:
-        case 4:
         case 5:
-            cout << "The season is spring\n";
-            break;
-        case 6:
         case 7:
         case 8:
-            cout << "The season is summer\n";
-            break;
-        case 9:
         case 10:
-        case 11:
-            cout << "The season is autumn\n";
-            break;
         case 12:
-            cout << "The season is winter\n";
+            cout << thirtyFirst << endl;
+            break;
+        case 2:
+            int leap;
+            if (!(yr % 100)) {
+                leap = yr % 400;
+            }
+            else {
+                leap = yr % 4;
+            }
+            if (leap == 0) {
+                cout << febLeap << endl;
+            }
+            else {
+                febLeap -= 1;
+                cout << febLeap << endl;
+            }
+            break;
+        case 4:
+        case 6:
+        case 9:
+        case 11:
+            cout << thirty;
             break;
         default:
-            cout << "That is not a month\n";
+            cout << "Error\n";
             break;
     }
     return 0;
